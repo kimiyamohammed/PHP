@@ -1,0 +1,12 @@
+<form>
+    Title:&nbsp;&nbsp;&nbsp;<input type = "text" name="title" placeholder={{movie.title}}  required [(ngModel)]="movie.title"><br/>
+    Year:&nbsp;&nbsp;&nbsp;<input type = "text" name="year"  placeholder = {{movie.year}} [(ngModel)]="movie.year"><br/>
+    Genre:<input type = "text" name="genre" placeholder = {{movie.genre}} [(ngModel)]="movie.genre"><br/>
+
+    <!-- <input type = "text" name="movieId" *ngIf="invisible"  [(ngModel)]="movieId"><br/> -->
+    <button type="submit" (click)="fullUpdate()">Full Update</button>
+    <button type="submit" (click)="partialUpdate()">Partial Update</button><br/>
+</form>
+
+<app-update-cast [movieId]="movieId" *ngIf="visible"></app-update-cast>
+<app-update-production  [movieId]="movieId" *ngIf="visible"></app-update-production>

@@ -1,0 +1,13 @@
+<div>
+    <h2>Add Movie</h2>
+    <form>
+        Title:<input type = "text" name="title" required [(ngModel)]="movie.title"><br/>
+        Year:<input type = "text" name="year"  [(ngModel)]="movie.year"><br/>
+        Genre:<input type = "text" name="genre"  [(ngModel)]="movie.genre"><br/>
+        <!-- <input type = "text" name="movieId" *ngIf="invisible"  [(ngModel)]="movieId"><br/> -->
+        <button type="submit" (click)="saveMovie()">Add Movie</button><br/>
+    </form>
+    
+    <app-add-cast [movieId]="movieId" *ngIf="visible"></app-add-cast>
+    <app-add-production  [movieId]="movieId" *ngIf="visible"></app-add-production>
+</div>

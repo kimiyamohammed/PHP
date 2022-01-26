@@ -1,0 +1,22 @@
+
+<form id ="search">
+    Search by:
+    <input type="radio" id="title" name="searchBy" value="title" [(ngModel)]="searchBy">
+    <label for="title">title</label>
+    <input type="radio" id="state" name="searchBy" value="state" [(ngModel)]="searchBy">
+    <label for="state">state</label><br>
+    Title: <input type = "text" name="title" [(ngModel)]="title">
+    State:
+    <select name="state" [(ngModel)]="state">
+        <option value="{{movie.production.location.state}}" *ngFor='let movie of movies'>{{movie.production.location.state}}</option>
+    </select>
+    <button type="submit" (click)="search()">search</button>
+</form>
+<h2>Movies Title:</h2>
+<ul>
+    <li *ngFor='let movie of movies'>
+        <a routerLink='/movies/{{movie._id}}'>{{movie.title}} ({{movie.year}})</a>{{3 | rate}}<br/>
+    </li>
+</ul>
+<button type="submit" (click)="previous()" class="paginator">Previous</button>
+<button type="submit" (click)="next()" class="paginator">next</button>

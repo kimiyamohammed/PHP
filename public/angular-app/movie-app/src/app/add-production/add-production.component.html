@@ -1,0 +1,12 @@
+<div id="form-lefter">
+    <h2>Add Production</h2>
+
+<form>
+    Company name:<input type = "text" name="name" required [(ngModel)]="production.prodName"><br/>
+    Location:<br/>
+    State: <input type = "text" name="state"  [(ngModel)]="production.location.state"><br/>
+    Coordinates:<br/>
+    Longtitude: <input type = "text" name="lng"  [(ngModel)]="production.location.coordinates[0]"><br/>Latitude: <input type = "text" name="lat"  [(ngModel)]="production.location.coordinates[1]"><br/>
+    <button type="submit" (click)="saveProduction()">Add Production</button><br/>
+</form>
+</div>

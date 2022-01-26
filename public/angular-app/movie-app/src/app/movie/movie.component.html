@@ -1,0 +1,21 @@
+  <ul>
+      <li>Title: {{movie.title}}</li>
+      <li>Year: {{movie.year}}</li>
+      <li>Genre: {{movie.genre}}</li>
+      <li>Casts:
+        <dl *ngFor='let cast of movie.casts'>
+            <dt>Name: {{cast.name}}</dt>
+            <dd>Age: {{cast.age}}</dd>
+        </dl>
+      <li>Production:
+          <dl>
+            <dd>Company name : {{movie.production.prodName}}</dd>
+            <dd>State : {{movie.production.location.state}}</dd>
+            <dd>Location coordinates : [{{movie.production.location.coordinates}}]</dd>
+          </dl>
+        </li>
+</ul>
+  
+
+<button routerLink='/movies' type="submit" (click) = 'deleteMovie()'>Delete Movie</button>
+<button routerLink='/movies/{{movie._id}}/update' type="submit">Update Movie</button>

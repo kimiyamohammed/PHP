@@ -1,0 +1,7 @@
+{
+    "signal":"SIGHUB",
+    "env":{
+        "NODE_ENV":"development"
+    }
+    
+}
